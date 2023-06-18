@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    background: theme("colors.background");
+    color: theme("colors.secondary");
+
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+
+    scroll-behavior: smooth;
+  }
+
+  header {
+    text-align: center;
+    line-height: 1;
+
+    padding: 1rem 0;
+
+    border-bottom: 1px solid theme("colors.subtle");
+  }
+
+  article {
+    margin: 1rem 0;
+    position: relative;
+  }
+
+  aside {
+    @media screen and (min-width: calc(132ch + 10rem)) {
+      position: absolute;
+      width: calc(50vw - 33ch);
+      padding: 0 1rem;
+      right: calc(100% + (50vw - 33ch) / 2);
+      transform: translateX(50%);
+      width: 33ch;
+      text-align: left;
+    }
+    @media screen and (max-width: calc(132ch + 10rem)) {
+      position: relative;
+      background: theme("colors.layer");
+      padding: 1rem 1rem 1rem calc(2rem + 2ch);
+      margin: 1rem 0;
+      border-radius: 0.25rem;
+
+      &::before {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        content: "💡";
+      }
+    }
+  }
+
+  @function pow($number, $exponent) {
+    $value: 1;
+
+    @if $exponent >0 {
+      @for $i from 1 through $exponent {
+        $value: $value * $number;
+      }
+    }
+
+    @return $value;
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-size: 1rem * pow(1.2, (6 - $i));
+    }
+  }
+
+  :is(h1, h2, h3, h4, h5, h6) {
+    color: theme("colors.brand");
+    position: relative;
+    font-weight: 600;
+
+    + p,
+    aside {
+      margin-top: 0.5rem;
+    }
+
+    a {
+      position: absolute;
+      right: 100%;
+      padding-right: 0.5rem;
+
+      color: theme("colors.subtle");
+      opacity: 0;
+
+      transition-property: opacity;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &:hover {
+      a {
+        opacity: 1;
+      }
+    }
+
+    p + & {
+      margin-top: 1.5rem;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.75;
+
+    + p {
+      margin-top: 1rem;
+    }
+  }
+
+  a {
+    color: theme("colors.brand");
+    text-decoration: none;
+
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    * {
+      color: theme("colors.primary");
+    }
+  }
+
+  pre {
+    background: theme("colors.layer") !important;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+  }
+}
+
+@layer utilities {
+  .content {
+    padding: 0 max(1rem, calc(50vw - 33ch));
+  }
+}

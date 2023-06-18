@@ -1,0 +1,21 @@
+---
+import Index from "../layouts/Layout.astro";
+
+const {
+  frontmatter: { title, subtitle, published },
+} = Astro.props;
+---
+
+<Index title={title}>
+  <header>
+    <hgroup>
+      <h1>{title}</h1>
+      <p>
+        {subtitle} · <wbr />{new Date(published).toISOString().substring(0, 10)}
+      </p>
+    </hgroup>
+  </header>
+  <article>
+    <slot />
+  </article>
+</Index>
