@@ -1,6 +1,6 @@
 {
 	"main": "dist/_worker.js/index.js",
-	"name": "he1d1",
+	"name": "heidi",
   "compatibility_date": "2025-10-31",
   "compatibility_flags": [
     "nodejs_compat",
