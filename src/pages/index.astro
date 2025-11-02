@@ -3,14 +3,23 @@ const title = "heidi.codes";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<h1>{title}</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-indigo-50 text-indigo-950 dark:(bg-indigo-950 text-indigo-50) h-screen flex justify-center items-center">
+    <div
+      class="max-w-[min(66ch,100vw-2rem)] text-center px-4"
+    >
+      <h1 class="text-3xl font-bold mb-4">{title}</h1>
+      <nav class="mb-4 flex gap-4">
+	<a class="text-indigo-400 font-bold" href="https://github.com/he1d1">GitHub</a>
+	<a class="text-indigo-400 font-bold" href="mailto:heidi+site@heidi.codes">Email</a>
+	<a class="text-indigo-400 font-bold" href="https://uk.linkedin.com/in/lewiehill">Linkedin</a>
+      </nav>
+    </div>
+  </body>
 </html>
