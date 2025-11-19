@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.10",
-    "astro": "^5.15.3"
+    "astro": "^5.15.9"
   },
   "devDependencies": {
     "@unocss/preset-mini": "^66.5.4",
