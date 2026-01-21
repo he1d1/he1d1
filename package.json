@@ -17,6 +17,6 @@
     "@unocss/reset": "^66.5.4",
     "@unocss/transformer-variant-group": "^66.5.4",
     "unocss": "^66.5.4",
-    "wrangler": "^4.45.3"
+    "wrangler": "^4.59.1"
   }
 }
